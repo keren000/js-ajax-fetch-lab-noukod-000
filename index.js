@@ -1,14 +1,8 @@
 const baseURL = 'https://api.github.com';
 
-const user = 'richardcsanchez';
-
 
 
 function getToken() {
-
-  //change to your token to run in browser, but set
-
-  //back to '' before committing so all tests pass
 
   return '';
 
@@ -21,6 +15,8 @@ function forkRepo() {
   const repo = 'learn-co-curriculum/js-ajax-fetch-lab';
 
   const url = `${baseURL}/repos/${repo}/forks`;
+
+
 
   fetch(url, {
 
@@ -44,11 +40,7 @@ function forkRepo() {
 
 function showResults(json) {
 
-  document.getElementById('results').innerHTML = `<a href=${json.html_url}>${
-
-    json.html_url
-
-  }</a>`;
+  document.getElementById('results').innerHTML = `<a href=${json.html_url}>${json.html_url}</a>`;
 
 }
 
@@ -56,7 +48,7 @@ function showResults(json) {
 
 function createIssue() {
 
-  const repo = `${user}/js-ajax-fetch-lab`;
+  const repo = `musicmills1990/js-ajax-fetch-lab`;
 
   const url = `${baseURL}/repos/${repo}/issues`;
 
@@ -94,9 +86,11 @@ function createIssue() {
 
 function getIssues() {
 
-  const repo = `${user}/js-ajax-fetch-lab`;
+  const repo = `musicmills1990/js-ajax-fetch-lab`;
 
   const url = `${baseURL}/repos/${repo}/issues`;
+
+
 
   fetch(url, {
 
@@ -108,7 +102,7 @@ function getIssues() {
 
   })
 
-    .then(res => res.json())
+    .then(res => res(json))
 
     .then(json => console.log(json));
 
